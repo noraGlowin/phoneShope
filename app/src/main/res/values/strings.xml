@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">phoneShope</string>
+    <string name="iphone12">Iphone 12 64GB</string>
+    <string name="samsung">Samsung Galaxy S21 Ultra</string>
+    <string name="xiaomi">Xiaomi 11T Pro</string>
+    <string name="huawei">Huawei Y6p</string>
+    <string name="samsungz">Samsung Galaxy Z Flip3</string>
+    <string name="iphone13">Iphone 13</string>
+
+    <string name="iphone12_price">4500SR</string>
+    <string name="samsung_price">4500SR</string>
+    <string name="xiaomi_price">2000RS</string>
+    <string name="huawei_price">500RS</string>
+    <string name="samsungz_price">500SR</string>
+    <string name="iphone13_price">6000RS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

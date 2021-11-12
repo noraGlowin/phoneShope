@@ -9,5 +9,14 @@
         android:id="@+id/mainFragment"
         android:name="com.example.phoneshope.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_productdetailsFragment"
+            app:destination="@id/productdetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productdetailsFragment"
+        android:name="com.example.phoneshope.ProductdetailsFragment"
+        android:label="fragment_productdetails"
+        tools:layout="@layout/fragment_productdetails" />
 </navigation>

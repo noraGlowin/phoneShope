@@ -27,6 +27,10 @@ class ProductdetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+  arguments?.let {
+      binding?.imageView!!.setImageResource(it.getInt("image"))
+      binding?.phoneName!!.text= it.getString("name").toString()
+  }
     }
     override fun onDestroyView() {
         super.onDestroyView()

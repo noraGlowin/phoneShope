@@ -1,17 +1,24 @@
 package com.example.hw_product_recycleview.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hw_product_recycleview.objects.Detail
+import com.example.phoneshope.MainFragment
+import com.example.phoneshope.MainFragmentDirections
 import com.example.phoneshope.R
+import com.example.phoneshope.data.Datasource
 import com.example.phoneshope.model.Product
 
-class ItemAdapter(private val dataSet: List<Product>, private val context: Context)
+class ItemAdapter(  private var dataSet:List<Product> ,private val context: Context)
     : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
 
@@ -44,17 +51,20 @@ class ItemAdapter(private val dataSet: List<Product>, private val context: Conte
         if (item.isVip) {
             holder.vip.visibility = View.VISIBLE
         }
-        //to check the quantity if it more than 0 it's will go to new screen to show the phone name , quantity , image , price
-//        holder.buy.setOnClickListener {
-//            if (item.quantity > 0) {
-//                val intent= Intent(context, Productdetails::class.java )
-//                intent.putExtra(Detail.PhoneName, context?.getString(item.productNameId))
-//                intent.putExtra(Detail.PhoneImage, item.productImage)
-//                it?.context?.startActivity(intent)
-//            } else {
-//                Toast.makeText(context, "The item is out of stock", Toast.LENGTH_SHORT).show()
-//            }
-//        }
+      //  to check the quantity if it more than 0 it's will go to new screen to show the phone name , quantity , image , price
+        holder.buy.setOnClickListener {
+            if (item.quantity > 0) {
+                val action =MainFragmentDirections.actionMainFragmentToProductdetailsFragment(
+                    name =context?.resources!!.getString(item.productNameId) , image= (item.productImage) )
+
+
+
+                holder.itemView.findNavController().navigate(action)
+
+            } else {
+                Toast.makeText(context, "The item is out of stock", Toast.LENGTH_SHORT).show()
+            }
+        }
 
 
     }

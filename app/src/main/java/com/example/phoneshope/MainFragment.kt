@@ -32,7 +32,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = binding?.recyclerView!!
         //recyclerView.adapter= ItemAdapter(dataSet ,requireContext())
-        binding?.recyclerView?.adapter= ItemAdapter(dataSet ,requireContext())
+        binding?.recyclerView?.adapter= ItemAdapter(dataSet,requireContext())
     }
     override fun onDestroyView() {
         super.onDestroyView()
